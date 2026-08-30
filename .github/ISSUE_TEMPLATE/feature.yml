@@ -6,59 +6,82 @@ body:
   - type: markdown
     attributes:
       value: |
-        分かる範囲で埋めてもらえれば十分です。埋まってない所は、こちらから聞きます。
+        > [!TIP]
+        > 分かる範囲で埋めてもらえれば十分です。技術的な話は「やり方の指定」以外に書かなくて大丈夫です。
 
   - type: textarea
     id: why
     attributes:
-      label: "なぜ欲しいか（必須）"
-      description: "困っとることを、そのまま書いてください。技術的な話はいりません。"
-      placeholder: |
-        例）毎月の請求書を1件ずつ手で作っとるので、月末に2日つぶれる。
+      label: "なぜやるのか（必須）"
+      description: "困っていること・やりたいことを、そのまま書いてください"
+      placeholder: "例：ユーザーが商品を比較できないため、コンバージョンが低下している"
     validations:
       required: true
 
-  - type: dropdown
-    id: priority
-    attributes:
-      label: "急ぎ具合（任意）"
-      options:
-        - "🔴 高（すぐ対応）"
-        - "🟡 中（次のスプリント）"
-        - "🟢 低（余裕があれば）"
-    validations:
-      required: false
-
   - type: textarea
-    id: clues
+    id: screenshots
     attributes:
-      label: "手がかり（任意）"
-      description: "画像や動画は、この枠にドラッグ&ドロップするか貼り付けてください。似た機能の画面写真でも助かります。"
+      label: "スクリーンショット / GIF / 動画 / Figma"
+      description: "デザインや参考画像があれば添付してください。画像はこの枠にドラッグ&ドロップできます。"
       value: |
         - 画面のURL：
         - Figma：
     validations:
       required: false
 
-  - type: textarea
-    id: done-definition
+  - type: markdown
     attributes:
-      label: "どうなったら終わりか（必須）"
-      description: |
-        緑の枠は消さず、その下の `- [ ]` の後ろに書いてください。
-
-        <details>
-        <summary>📝 書き方の例（押すと開きます）</summary>
-
-        - [ ] 〇〇の画面で△△ができるようになっとる
-        - [ ] 表示がデザイン（Figma等）と合っとる
-        - [ ] 今ある機能が崩れとらん
-
-        </details>
       value: |
         > [!TIP]
-        > ここが合否のラインです。「動くこと」やなく「何がどうなっとれば終わりか」を書いてください。
+        > ここは技術の人が書く欄です。わからなければ空のままで大丈夫です。
 
+        <details>
+        <summary>📝 記入例</summary>
+
+        1. 商品比較ページのコンポーネントを作成
+        2. 最大4商品まで比較可能にする
+        3. スペック項目ごとに並べて表示
+
+        **該当ファイルパス:**
+        - `src/pages/compare.tsx` (新規作成)
+        - `src/components/CompareTable.tsx` (新規作成)
+
+        </details>
+
+  - type: textarea
+    id: how
+    attributes:
+      label: "やり方の指定（任意・技術向け）"
+      description: "実装の指定がある場合のみ。わからない場合は空でOKです"
+      placeholder: |
+        - 該当ファイルパス：
+        1. ○○コンポーネントを作成
+        2. △△APIを呼び出す
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        > [!TIP]
+        > 「こうなっとれば終わり」をチェックリストで書いてください。
+
+        <details>
+        <summary>📝 記入例</summary>
+
+        - [ ] 最大4商品を選択して比較できる
+        - [ ] スペック項目が並べて表示される
+        - [ ] 各商品から直接カートに追加できる
+        - [ ] モバイルでも快適に操作できる
+        - [ ] デザインがFigmaと一致している
+
+        </details>
+
+  - type: textarea
+    id: complete
+    attributes:
+      label: "完成の定義（必須）"
+      value: |
         - [ ]
     validations:
       required: true
@@ -66,7 +89,7 @@ body:
   - type: textarea
     id: else
     attributes:
-      label: "その他（任意）"
-      description: "作り方に注文がある場合もここへ。書かれた内容は「指定」として扱い、勝手に変えず確認をとります。"
+      label: "その他"
+      description: "共有しておきたいことがあれば"
     validations:
       required: false
