@@ -1,6 +1,7 @@
 name: "🔧 SBI（作業分解）"
 description: "PBI を実装単位に分解する時に使います。本文は空のままでも構いません。"
 labels: []
+type: "Task"
 projects: ["ritmo-inc/2"]
 body:
   - type: textarea

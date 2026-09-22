@@ -1,6 +1,7 @@
 name: "バグ修正・機能改修 (PBI)"
 description: "今あるものが壊れとる・使いにくい時に使います"
 labels: ["bug"]
+type: "Bug"
 projects: ["ritmo-inc/2"]
 body:
   - type: markdown

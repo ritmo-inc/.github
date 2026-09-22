@@ -1,6 +1,7 @@
 name: "新規開発・機能改修 (PBI)"
 description: "新しく作りたい・今あるものを良くしたい時に使います"
 labels: ["feature"]
+type: "Feature"
 projects: ["ritmo-inc/2"]
 body:
   - type: markdown
