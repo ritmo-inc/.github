@@ -19,16 +19,41 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: symptom
+  - type: dropdown
+    id: severity
     attributes:
-      label: "何が起きたか（必須）"
-      description: "期待される挙動と実際の挙動を書いてください"
-      value: |
-        - 期待される挙動：
-        - 実際の挙動：
+      label: "どれくらい困っとるか（必須）"
+      description: "トリアージ時に同じ名前のラベル（sev-*）として付け直します。critical=致命的 / high=早急 / medium=通常 / low=軽微 が目安です。迷ったら medium で大丈夫です。"
+      options:
+        - "sev-critical"
+        - "sev-high"
+        - "sev-medium"
+        - "sev-low"
+      default: 2
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        > [!TIP]
+        > ここから3つは「どう壊れとるか」を整理する欄です。分かる範囲で大丈夫です。
+
+        <details>
+        <summary>📝 記入例</summary>
+
+        **再現手順**
+        1. 馬の一覧画面を開く
+        2. 検索窓に「はなこ」と入れて検索する
+        3. 画面が真っ白になる
+
+        **現状（実際の動作）**
+        - 画面が真っ白になり、何も表示されない
+
+        **期待動作**
+        - 「はなこ」の検索結果が一覧で表示される
+
+        </details>
 
   - type: textarea
     id: reproduction
@@ -37,8 +62,26 @@ body:
       description: "同じことが起きる手順を書いてください"
       placeholder: |
         1. ○○画面を開く
-        2. △△ボタンをクリック
-        3. エラーが発生
+        2. △△ボタンを押す
+        3. エラーが出る
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: "現状（実際の動作）（必須）"
+      description: "今、実際にどうなっているかを書いてください"
+      placeholder: "例：エラーが出て画面が真っ白になり、何も表示されない"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "期待動作（必須）"
+      description: "本来どうなってほしいかを書いてください"
+      placeholder: "例：「はなこ」の検索結果が一覧で表示される"
     validations:
       required: true
 
@@ -46,19 +89,11 @@ body:
     id: screenshots
     attributes:
       label: "スクリーンショット / GIF / 動画 / Figma"
-      description: "画面キャプチャがあると調査が早くなります。画像はこの枠にドラッグ&ドロップできます。"
+      description: "画面キャプチャやURLがあると調査が早くなります。画像はこの枠にドラッグ&ドロップできます。"
       value: |
         - 画面のURL：
         - Figma：
         - 端末 / OS / ブラウザ：
-    validations:
-      required: false
-
-  - type: textarea
-    id: additional
-    attributes:
-      label: "追加情報"
-      placeholder: |
         - 発生頻度：
         - 影響範囲：
     validations:

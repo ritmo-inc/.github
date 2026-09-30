@@ -19,6 +19,20 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "優先度・急ぎ具合（必須）"
+      description: "トリアージ時に同じ名前のラベル（sev-*）として付け直します。critical=致命的 / high=早急 / medium=通常 / low=軽微 が目安です。迷ったら medium で大丈夫です。"
+      options:
+        - "sev-critical"
+        - "sev-high"
+        - "sev-medium"
+        - "sev-low"
+      default: 2
+    validations:
+      required: true
+
   - type: textarea
     id: screenshots
     attributes:
