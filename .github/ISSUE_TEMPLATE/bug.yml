@@ -19,20 +19,6 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: severity
-    attributes:
-      label: "どれくらい困っとるか（必須）"
-      description: "トリアージ時に同じ名前のラベル（sev-*）として付け直します。critical=致命的 / high=早急 / medium=通常 / low=軽微 が目安です。迷ったら medium で大丈夫です。"
-      options:
-        - "sev-critical"
-        - "sev-high"
-        - "sev-medium"
-        - "sev-low"
-      default: 2
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
@@ -52,6 +38,9 @@ body:
 
         **期待動作**
         - 「はなこ」の検索結果が一覧で表示される
+
+        **発生頻度・環境**
+        - ほぼ毎回発生 / iPhone 15・Safari / 自分だけでなく同じチームの2人でも確認
 
         </details>
 
@@ -85,6 +74,31 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: "発生頻度（必須）"
+      description: "同じ手順でどのくらいの確率で起きますか？"
+      options:
+        - 毎回
+        - ほぼ毎回（8割以上）
+        - 時々（半分くらい）
+        - まれ（1〜2回）
+        - 不明
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: "端末 / OS / ブラウザ / 影響範囲（必須）"
+      description: "起きている環境と、どのくらい広い範囲で起きているかを書いてください。分からない項目は「わからない」で大丈夫です。"
+      value: |
+        - 端末 / OS / ブラウザ：
+        - 影響範囲（自分だけ？ 他の人でも発生？）：
+    validations:
+      required: true
+
   - type: textarea
     id: screenshots
     attributes:
@@ -93,9 +107,6 @@ body:
       value: |
         - 画面のURL：
         - Figma：
-        - 端末 / OS / ブラウザ：
-        - 発生頻度：
-        - 影響範囲：
     validations:
       required: false
 
