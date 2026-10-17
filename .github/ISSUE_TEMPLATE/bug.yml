@@ -93,7 +93,7 @@ body:
     attributes:
       label: "端末 / OS / ブラウザ / 影響範囲（必須）"
       description: "起きている環境と、どのくらい広い範囲で起きているかを書いてください。分からない項目は「わからない」で大丈夫です。"
-      value: |
+      placeholder: |
         - 端末 / OS / ブラウザ：
         - 影響範囲（自分だけ？ 他の人でも発生？）：
     validations:
@@ -104,7 +104,7 @@ body:
     attributes:
       label: "スクリーンショット / GIF / 動画 / Figma"
       description: "画面キャプチャやURLがあると調査が早くなります。画像はこの枠にドラッグ&ドロップできます。"
-      value: |
+      placeholder: |
         - 画面のURL：
         - Figma：
     validations:
