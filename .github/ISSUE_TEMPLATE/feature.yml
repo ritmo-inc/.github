@@ -2,7 +2,6 @@ name: "新規開発・機能改修 (PBI)"
 description: "新しく作りたい・今あるものを良くしたい時に使います"
 labels: ["feature"]
 type: "Feature"
-projects: ["ritmo-inc/2"]
 body:
   - type: markdown
     attributes:
@@ -23,10 +22,11 @@ body:
     id: screenshots
     attributes:
       label: "スクリーンショット / GIF / 動画 / Figma"
-      description: "デザインや参考画像があれば添付してください。画像はこの枠にドラッグ&ドロップできます。"
-      value: |
+      description: "デザインや参考画像があれば添付してください。画像はこの囲みにドラッグ&ドロップできます。"
+      placeholder: |
         - 画面のURL：
         - Figma：
+        - 参考の画像や手描きの図：（ここにドラッグ&ドロップ）
     validations:
       required: false
 
@@ -34,7 +34,7 @@ body:
     attributes:
       value: |
         > [!TIP]
-        > ここは技術の人が書く欄です。わからなければ空のままで大丈夫です。
+        > ここは技術の人が書く項目です。わからなければ空のままで大丈夫です。
 
         <details>
         <summary>📝 記入例</summary>
@@ -82,8 +82,10 @@ body:
     id: complete
     attributes:
       label: "完成の定義（必須）"
-      value: |
-        - [ ]
+      description: "見て分かる事実をチェック項目で3〜5個。あいまいな言葉（使いやすく・きれいに）は使わない。"
+      placeholder: |
+        - [ ] ○○の画面で△△ができる
+        - [ ] 表示が Figma と一致している
     validations:
       required: true
 
