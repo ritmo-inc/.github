@@ -2,7 +2,6 @@ name: "バグ修正・機能改修 (PBI)"
 description: "今あるものが壊れとる・使いにくい時に使います"
 labels: ["bug"]
 type: "Bug"
-projects: ["ritmo-inc/2"]
 body:
   - type: markdown
     attributes:
@@ -23,7 +22,7 @@ body:
     attributes:
       value: |
         > [!TIP]
-        > ここから3つは「どう壊れとるか」を整理する欄です。分かる範囲で大丈夫です。
+        > ここから3つは「どう壊れとるか」を整理する項目です。分かる範囲で大丈夫です。
 
         <details>
         <summary>📝 記入例</summary>
@@ -102,19 +101,20 @@ body:
   - type: textarea
     id: screenshots
     attributes:
-      label: "スクリーンショット / GIF / 動画 / Figma"
-      description: "画面キャプチャやURLがあると調査が早くなります。画像はこの枠にドラッグ&ドロップできます。"
+      label: "スクリーンショット / GIF / 動画 / Figma（必須）"
+      description: "画像1枚の方が文章10行より早く正確に伝わります。画像はこの囲みにドラッグ&ドロップできます。画面が無い不具合（裏側の計算だけ等）の時は「見せられない理由: 〜」と1行書けば大丈夫です。"
       placeholder: |
         - 画面のURL：
         - Figma：
+        - 起きた画面の画像：（ここにドラッグ&ドロップ）
     validations:
-      required: false
+      required: true
 
   - type: markdown
     attributes:
       value: |
         > [!TIP]
-        > ここは技術の人が書く欄です。わからなければ空のままで大丈夫です。
+        > ここは技術の人が書く項目です。わからなければ空のままで大丈夫です。
 
         <details>
         <summary>📝 記入例</summary>
@@ -150,6 +150,7 @@ body:
         - [ ] 修正前のエラーが再現しなくなっている
         - [ ] 他の画面が崩れていない
         - [ ] iOS・Androidどちらでも正常に動作する
+        - [ ] 同じ不具合を拾う自動テストを足した（二度と起きんように）
 
         </details>
 
@@ -157,8 +158,10 @@ body:
     id: complete
     attributes:
       label: "完成の定義（必須）"
-      value: |
-        - [ ]
+      description: "見て分かる事実をチェック項目で3〜5個。"
+      placeholder: |
+        - [ ] 再現手順をやってもエラーが出ない
+        - [ ] 同じ不具合を拾う自動テストがある
     validations:
       required: true
 
